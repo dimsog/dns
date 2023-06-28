@@ -316,12 +316,12 @@ class RawDataRequest
             return $this->getLabelsFromIp($address);
         }
 
-        if (!DnsUtils::isValidDomainOrSubdomain($address)) {
-            throw new RawDataException(
-                'Invalid address, it must be an IP or domain, got:' . json_encode($address),
-                RawDataException::ERR_INVALID_ADDRESS
-            );
-        }
+//        if (!DnsUtils::isValidDomainOrSubdomain($address)) {
+//            throw new RawDataException(
+//                'Invalid address, it must be an IP or domain, got:' . json_encode($address),
+//                RawDataException::ERR_INVALID_ADDRESS
+//            );
+//        }
 
         return explode('.', strtolower($address));
     }

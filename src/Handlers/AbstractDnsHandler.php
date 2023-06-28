@@ -95,12 +95,12 @@ abstract class AbstractDnsHandler implements DnsHandlerInterface
             );
         }
 
-        if (!preg_match(Regex::DOMAIN_OR_SUBDOMAIN, $hostName)) {
-            throw new DnsHandlerException(
-                $hostnameErrorInfo . ' format! (characters "A-Za-z0-9.-", max length 63 chars allowed)',
-                DnsHandlerException::HOSTNAME_FORMAT_INVALID
-            );
-        }
+//        if (!preg_match(Regex::DOMAIN_OR_SUBDOMAIN, $hostName)) {
+//            throw new DnsHandlerException(
+//                $hostnameErrorInfo . ' format! (characters "A-Za-z0-9.-", max length 63 chars allowed)',
+//                DnsHandlerException::HOSTNAME_FORMAT_INVALID
+//            );
+//        }
 
         if (!preg_match(Regex::HOSTNAME_LENGTH, $hostName)) {
             throw new DnsHandlerException(
