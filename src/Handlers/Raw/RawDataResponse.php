@@ -348,12 +348,10 @@ class RawDataResponse
                 break;
 
             default:
-                throw new DnsHandlerException(
-                    'Not implemented type: ' . json_encode($typeId) . PHP_EOL .
-                    ' headerData:' . json_encode($headerData),
-                    DnsHandlerException::TYPE_ID_NOT_IMPLEMENTED
-                );
-
+                $result['type'] = 'TXT';
+                $strLen = ord($this->readResponse());
+                $text = $this->readResponse($strLen);
+                $result['txt'] = DnsUtils::sanitizeRecordTxt($text);
         }
 
         $this->lastIndex++;
